@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+    <h2>All Products</h2>
+</div>
+<div class="row row-pb-md">
+
+    {% for shoes in shoes %}
+    <div class="col-lg-3 mb-4 text-center">
+        <div class="product-entry border">
+            <a href="#" class="prod-img">
+                <img src="{{shoes.shoe_image.url}}" class="img-fluid">
+            </a>
+            <div class="desc">
+                <h2><a href="#">{{shoes.shoe_name}}</a></h2>
+                <span class="price">${{shoes.shoe_price}}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock body %}
