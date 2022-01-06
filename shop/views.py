@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import Trusted_Partner
+from .models import Trusted_Partner,shoe
 # Create your views here.
 def index(request):
     prand = Trusted_Partner.objects.all()
-    return render(request,'shop/index.html',{'prand':prand})
+    shoes = shoe.objects.all()
+    return render(request,'shop/index.html',{'prand':prand,'shoes':shoes})
 
 
 def about(request):

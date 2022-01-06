@@ -24,6 +24,7 @@ class shoe(models.Model):
     shoe_num = models.IntegerField()
     shoe_type =models.CharField(max_length=50,choices=gender)
     shoe_image =models.ImageField(upload_to='images/')
+    shoe_price = models.IntegerField()
     class Meta:
         verbose_name = ("shoe")
         verbose_name_plural = ("shoes")
